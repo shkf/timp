@@ -5,11 +5,10 @@
 
 int main (void)
 {
-	int a, b;
-	float ch;
+	int a, b, ch;
 	scanf("%d", &a);
 	scanf("%d", &b);
 	ch = pow((double) a, (double) b);
-	printf("%f", ch);
+	printf("%d\n", ch);
 	return 0;
 }
