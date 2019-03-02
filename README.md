@@ -42,4 +42,6 @@
 
 Было введено 5 чисел. В результате программа вывела число 2867.
 
-Для оформления документа был использован ресурс https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+| Использованные ресурсы          | Ссылка                                                           |
+| ------------    | -----------------------------------------------------------------|
+| Статья markdown | https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet |
