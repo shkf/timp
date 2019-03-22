@@ -3,7 +3,7 @@
 ### Первое задание
 ![alt text](https://pp.userapi.com/c846323/v846323063/1cef1e/_RmBSnTigbU.jpg)
 ![alt text](https://pp.userapi.com/c846323/v846323063/1cef25/VNgcPGSCxYU.jpg)
-![alt text](https://pp.userapi.com/c846323/v846323063/1cef4d/npB8R_pAhSk.jpg)
+![enter image description here](https://camo.githubusercontent.com/49e00e76cbf74deb0421baa5415a4051e562478b/68747470733a2f2f70702e757365726170692e636f6d2f633835313132342f763835313132343435372f64353931392f6b4e613173526d513234382e6a7067)
 ### Второе задание
 ![alt text](https://pp.userapi.com/c846323/v846323063/1cef54/APVBnEQ3lbQ.jpg)
 ![alt text](https://pp.userapi.com/c846323/v846323063/1cef64/ESv6pkk0I9s.jpg)
