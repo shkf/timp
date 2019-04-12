@@ -1,11 +1,11 @@
 # Практическая работа №4 
 ## Варианты и задания 
 ### Необходимо реализовать бинарное дерево поиска которое будет следовать по следующим пунктам: 
-![alt text](https://pp.userapi.com/c851324/v851324243/f4ee2/5GEvn..) 
+![alt text](https://pp.userapi.com/c847121/v847121821/1df94b/rnwdwu7ScRg.jpg)
 
-![alt text](https://pp.userapi.com/c851324/v851324243/f4eea/yE2BX..) 
+![alt text](https://pp.userapi.com/c854424/v854424356/20d06/mcSh4Ub5-i4.jpg)
 
-![alt text](https://pp.userapi.com/c851324/v851324243/f4ef1/NK0dw..) 
+![alt text](https://pp.userapi.com/c846321/v846321330/1e6bdd/Rd-F4-QwI-A.jpg)
 
 
 ## Ход работы 
@@ -27,7 +27,7 @@
 ## Результат работы 
 Результат работы программы представлен ниже. 
 
-![alt text](https://pp.userapi.com/c846420/v846420846/1e2ef1/HKnj..) 
+![alt text](https://pp.userapi.com/c854328/v854328497/22904/fOHhRKqThkg.jpg)
 
 ## Использованые ресурсы 
 
