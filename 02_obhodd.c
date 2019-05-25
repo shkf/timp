@@ -1,200 +1,64 @@
-#include <stdio.h> 
-#include <stdlib.h> 
-#include <stdbool.h>
-#include <string.h>
-typedef struct node
-{
-	int data;
-	struct node * left;
-	struct node * right;
-	struct node * rod;
-} node;
-typedef struct tree
-{
-	struct node * root;
-	int count;
-} tree;
-void init(tree * t)
-{
-	struct tree * new_tree = malloc(sizeof new_tree);
-	new_tree->root = NULL;
-	new_tree->count = 0;
-	t = new_tree;
-}
-int find(tree* t, int value, node* n)
-{
-	struct node * node2;
-	node2 = t->root;
-	if (t->root == NULL) {
-		return 1;
-	}
-	while (1) {
-		if (node2 == NULL) {
-			return 1;
-		}
-		else if (node2->data == value) {
-			n->data = node2->data;
-			n->left = node2->left;
-			n->right = node2->right;
-			n->rod = node2->rod;
-			return 0;
-		}
-		else if (value > node2->data) {
-			node2 = node2->right;
-		}
-		else {
-			node2 = node2->left;
-		}
-	}
-	return 1;
-}
-int insert(tree* t, int value)
-{
-	struct node * n, ** nodenode, *last_node = NULL;
-	struct node * en;
-	en = malloc(sizeof * en);
-	int error = find(t, value, en);
-	if (error == 0) {
-		return 1;
-	}
-	nodenode = &t->root;
-	n = t->root;
-	while (1) {
-		if (n == NULL) {
-			n = *nodenode = malloc(sizeof * n);
-			if (n != NULL) {
-				n->data = value;
-				n->left = NULL;
-				n->right = NULL;
-				n->rod = last_node;
-				t->count++;
-				return 0;
-			}
-			else {
-				return 2;
-			}
-		}
-		last_node = n;
-		if (value > n->data) {
-			nodenode = &n->right;
-			n = n->right;
-		}
-		else {
-			nodenode = &n->left;
-			n = n->left;
-		}
-	}
-	return 0;
-}
-int depth(struct node * n, int deep) {
-	if (n == NULL) {
-		return deep;
-	}
-	int depth1 = depth(n->left, deep + 1);
-	int depth2 = depth(n->right, deep + 1);
-	return (depth1 > depth2) ? depth1 : depth2;
-}
-void printNode(struct node * n, int current, int deep, int first) {
-	if (current == deep) {
-		if (first > 0) {
-			printf(" ");
-		}
+#include <stdio.h>
+#include <stdlib.h>
+#include<time.h>
 
-		if (n == NULL) {
-			printf("_");
-		}
-		else {
-			printf("%d", n->data);
-		}
-	}
-	else if (n != NULL) {
-		printNode(n->left, current + 1, deep, first);
-		printNode(n->right, current + 1, deep, first + 1);
-	}
-	else {
-		printNode(n, current + 1, deep, first);
-		printNode(n, current + 1, deep, first + 1);
-	}
-}
-void print(struct node * n)
+int shell(int *array, int size)
 {
-	int m = depth(n, 0);
-	for (int i = 1; i <= m; i++) {
-		printNode(n, 1, i, 0);
-		printf("\n");
-	}
-}
-void printTree(struct tree * t)
-{
-	print(t->root);
-}
-void print_obhod1(struct node * n)
-{
-	int m = depth(n, 0);
-	int flag_tree = 0;
-	for (int i = 1; i <= m; i++) {
-		if (flag_tree > 0) {
-			printf(" ");
-		}
-		else {
-			flag_tree++;
-		}
-		printNode(n, 1, i, 0);
-	}
-}
-void print_obhod2(struct tree * t)
-{
-	node * a[15];
-	int ab = 0;
-	node * write[15];
-	int wb = 0;
-	node * n = t->root;
-	while (wb < t->count) {
-		while (n != NULL) {
-			wb++;
-			if (n->right != NULL) {
-				ab++;
-				a[ab] = n->right;
+	int i, j,temp=0;
+	int sm;
+	int tmp;
+	for (sm = size / 2; sm > 0; sm /= 2){
+		for (i = sm; i < size; i++)
+		{
+			tmp = array[i];
+			for (j = i; j >= sm; j -= sm)
+			{
+				if (tmp < array[j - sm])
+				{
+				    temp++;
+					array[j] = array[j - sm];
+				}
+				else{
+				    temp++;
+					break;
+				}
+				temp++;
 			}
-			write[wb] = n;
-			n = n->left;
+			array[j] = tmp;
 		}
-		n = a[ab];
-		ab -= 1;
 	}
-	int flag_tree = 0;
-	for (int i = 1; i <= wb; i++) {
-		if (flag_tree > 0) {
-			printf(" ");
-		}
-		else {
-			flag_tree++;
-		}
-		printf("%d", write[i]->data);
-	}
-	printf("\n");
+	return temp;	
+		
+		
 }
-void print_obhod3(struct node * n, int flag_tree)
+int main()
 {
-	if (n->left != NULL) {
-		print_obhod3(n->left, flag_tree + 1);
-	}
-	if (n->right != NULL) {
-		print_obhod3(n->right, flag_tree + 1);
-	}
-	printf("%d", n->data);
-	if (flag_tree > 0) {
-		printf(" ");
-	}
+    srand(time(0));
+  clock_t start,stop;
+unsigned long t;
+    double rez,sr_rez = 0;
+int n[15] = {1,2,3,4,5,10,15,20,25,30,50,75,100,250,500};
+for (int f = 0 ; f <15;f++)
+{
+int *a;
+a = (int*)malloc(n[f] * sizeof(int));
+start = clock();
+for (int j = 0;j <1000;j++)
+{
+for (int i = 0;i < n[f]; i ++)
+{
+a[i] = rand()%  10000 - 8419;
+} 
+rez = shell(a,n[f]);
+sr_rez +=rez;
 }
-int main() {
-	struct tree * t = malloc(sizeof t);
-	init(t);
-	for (int i = 0; i < 7; i++) {
-		int a;
-		scanf("%d", &a);
-		insert(t, a);
-	}
-	print_obhod2(t);
-	return 0;
+stop = clock();
+printf("%d\n %f \n",n[f],sr_rez/1000);
+sr_rez = 0;
+rez = 0;
+double clock_rez = (stop - start)/(double)CLOCKS_PER_SEC;
+printf("%f \n",clock_rez*1000000);
+start ,stop = 0;
+clock_rez = 0;
+}
 }
